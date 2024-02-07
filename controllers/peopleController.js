@@ -1,13 +1,13 @@
-const pool = require("../db/pool");
+const People = require("../models/People");
 
-const getPeoples = (request, response) => {
-  pool.query("SELECT * FROM people ORDER BY id ASC", (error, results) => {
-    if (error) {
-      response.status(500).json({ error: "Internal Server Error" });
-      return;
-    }
-    response.status(200).json(results.rows);
-  });
+const getPeoples = async (request, response) => {
+  try {
+    const peoples = await People.findAll({ order: [["id", "ASC"]] });
+    response.status(200).json(peoples);
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
 };
 
 module.exports = { getPeoples };

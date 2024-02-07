@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "pgadmin",
+    "password": "1234",
+    "database": "hac_system",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "your_test_username",
+    "password": "your_test_password",
+    "database": "your_test_database",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "your_production_username",
+    "password": "your_production_password",
+    "database": "your_production_database",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
