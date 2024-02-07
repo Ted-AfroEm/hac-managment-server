@@ -29,6 +29,11 @@ module.exports = {
       date_of_birth: {
         type: Sequelize.DATE,
       },
+      status: {
+        type: Sequelize.ENUM("pending", "approved", "rejected"),
+        defaultValue: "pending",
+        allowNull: false,
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,
